@@ -8,10 +8,9 @@ public class MainPage extends BasePage {
     public MainPage(WebDriver driver) {
         super(driver);
     }
-    public MainPage selectProduct(){
-        MainPage mainPage = new MainPage(driver);
+    public ProductPage selectProduct(){
         driver.get("http://localhost/litecart/");
         driver.findElement(product).click();
-        return mainPage;
+        return new ProductPage(driver);
     }
 }

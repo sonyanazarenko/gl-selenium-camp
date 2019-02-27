@@ -31,12 +31,11 @@ public class AdminPage extends BasePage {
     }
 
     public AdminPage logIntoAdmin(){
-        AdminPage adminPage = new AdminPage(driver);
         driver.get("http://localhost/litecart/admin/");
         driver.findElement(LoginField).sendKeys("admin");
         driver.findElement(PasswordField).sendKeys("admin");
         driver.findElement(LoginButton).click();
-        return adminPage;
+        return this;
     }
 
     public boolean headerIsPresent(){
