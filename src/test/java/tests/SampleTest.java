@@ -1,11 +1,13 @@
 package tests;
 
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class SampleTest extends BaseTest {
+    @Ignore
     @Test
     public void googleTest() {
         driver.get("https://www.google.com");
