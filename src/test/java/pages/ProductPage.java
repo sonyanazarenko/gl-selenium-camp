@@ -17,10 +17,12 @@ public class ProductPage extends BasePage {
 
     public ProductPage addProductToCart(){
         driver.findElement(addToCartButton).click();
+        itemsInCart++;
         return this;
     }
 
     public ProductPage verifyItemsInCartIncreased(){
+        //wait for element reloaded
         Assert.assertEquals(itemsInCart,Integer.parseInt(driver.findElement(itemsInCartIcon).getText()));
         return this;
     }
