@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class BasePage {
     protected WebDriver driver;
     private int timeOutSeconds = 10;
+    static int itemsInCart = 0;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -22,13 +23,8 @@ public class BasePage {
         wait.until(ExpectedConditions.textToBe(by, expectedText));
     }
 
-    public void acceptAlertIfPresent() {
-        try {
-            if (ExpectedConditions.alertIsPresent() != null) {
-                Alert alert = driver.switchTo().alert();
-                alert.accept();
-            }
-        } catch (NoAlertPresentException e) {
-        }
+    public void waitForStalenessOf(WebElement webElement){
+        WebDriverWait wait = new WebDriverWait(driver,timeOutSeconds);
+        wait.until(ExpectedConditions.stalenessOf(webElement));
     }
 }
