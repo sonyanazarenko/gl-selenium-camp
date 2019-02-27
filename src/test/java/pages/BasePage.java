@@ -1,9 +1,6 @@
 package pages;
 
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -18,6 +15,11 @@ public class BasePage {
     public void waitForElementIsVisible(By by) {
         WebDriverWait wait = new WebDriverWait(driver, timeOutSeconds);
         wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
+
+    public void waitForTextToBe(By by, String expectedText){
+        WebDriverWait wait = new WebDriverWait(driver,timeOutSeconds);
+        wait.until(ExpectedConditions.textToBe(by, expectedText));
     }
 
     public void acceptAlertIfPresent() {
