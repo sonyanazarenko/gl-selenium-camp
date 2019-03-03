@@ -9,7 +9,7 @@ public class ProductPage extends BasePage {
     private By addToCartButton = By.name("add_cart_product");
     private By itemsInCartIcon = By.className("quantity");
     private By homeIcon = By.xpath("//i[@class='fa fa-home']");
-    private By checkOutButton = By.xpath("//a[@class='link'][text()='Checkout »']");
+    private By checkOutButton = By.xpath("//a[contains(text(),'Checkout')]");
     private By sizeDropDown = By.name("options[Size]");
 
     public ProductPage(WebDriver driver) {

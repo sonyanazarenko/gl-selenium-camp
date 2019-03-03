@@ -17,6 +17,7 @@ public class CartPage extends BasePage {
             driver.findElement(removeButton).click();
             waitForStalenessOf(driver.findElement(orderConfirmationTable));
         }
+        itemsInCart = 0;
         return this;
     }
 }
