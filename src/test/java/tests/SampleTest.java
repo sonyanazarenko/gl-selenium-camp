@@ -2,11 +2,13 @@ package tests;
 
 import org.junit.Assert;
 import org.junit.Ignore;
+import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 public class SampleTest extends BaseTest {
+
     @Ignore
     @Test
     public void googleTest() {
@@ -14,6 +16,6 @@ public class SampleTest extends BaseTest {
         WebElement element = driver.findElement(By.name("q"));
         element.sendKeys("Hello kitty");
         element.submit();
-        Assert.assertTrue(driver.findElement(By.id("uid_1")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.id("uid_11")).isDisplayed());
     }
 }
