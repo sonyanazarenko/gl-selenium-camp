@@ -1,5 +1,6 @@
 package tests;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Test;
 import pages.AdminPage;
 import pages.MainPage;
@@ -7,7 +8,7 @@ import pages.MainPage;
 public class AdminAddNewProductTest extends BaseTest {
     AdminPage adminPage;
     MainPage mainPage;
-    String productName = "Total Purple Duck";
+    String productName = RandomStringUtils.randomAlphabetic(10);
 
     @Test
     public void addNewProductTest() {
